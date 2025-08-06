@@ -6,6 +6,18 @@ import session from "express-session"
 const app=express()
 app.use(cors())
 app.use(express.json())
+// Setup form data reading
+app.use(express.urlencoded({extended:true}))
+
+// Setup Session
+
+app.use(session({
+    secret:"iraguha",
+    resave:false ,
+    saveUninitialized:false
+
+}))
+
 const db =mysql.createConnection({
     host:"localhost",
     user:"root",
