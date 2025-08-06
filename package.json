@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
+   
   },
   "repository": {
     "type": "git",
@@ -12,14 +13,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type":"module",
   "bugs": {
     "url": "https://github.com/jeanaimeiraguha/authentication-and-authorization/issues"
   },
   "homepage": "https://github.com/jeanaimeiraguha/authentication-and-authorization#readme",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-session": "^1.18.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.10"
   }
 }
