@@ -14,4 +14,10 @@ db.connect((err)=>{
     if(err){
         console.log("Ann error occured while trying to connect to db");
     }
+    else{
+        console.log("Connection succeed");
+    }
+})
+app.listen(3000,()=>{
+    console.log(`MY app is running on http://localhost:3000`)
 })
