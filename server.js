@@ -20,7 +20,8 @@ db.connect((err)=>{
 })
 app.get('/',(req,res)=>{
 
-    console.log('Hello dev')
+
+    res.send("Hello dev")
 })
 app.listen(3000,()=>{
     console.log(`MY app is running on http://localhost:3000`)
