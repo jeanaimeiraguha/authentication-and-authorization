@@ -11,22 +11,6 @@ The system allows a user to **register** with a username and password, then **lo
 
 ---
 
-## 📁 Project Structure
-
-project-root/
-│
-├── backend/
-│ ├── index.js # Main Express server
-│ └── db.js # MySQL database connection
-│
-└── frontend/
-├── src/
-│ ├── Login.jsx # Login component with useState
-│ ├── Register.jsx # Registration form
-│ └── App.jsx # Main application structure
-
-
----
 
 ## 🚀 Functional Overview
 
