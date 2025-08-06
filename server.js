@@ -58,8 +58,23 @@ if(req.session.user){
 else{
     res.send("please first  Login to continue plz")
 }
-
 }
+//Only admin Login Page
+app.get('/admin',isLoggedIn,(req,res)=>{
+    if(req.session.user.username=="Iraguha"){
+        res.send("Welcome Admin")
+    }
+    else{
+        res.send("Only admin can acess this page")
+    }
+})
+//logout page demo
+app.post('/logout',(req,res)=>{
+    req.session.destroy(()=>{
+        res.send('Logged Out successfully')
+    })
+})
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
