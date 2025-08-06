@@ -18,6 +18,7 @@ app.use(session({
 
 }))
 
+
 const db =mysql.createConnection({
     host:"localhost",
     user:"root",
@@ -37,6 +38,20 @@ app.get('/',(req,res)=>{
 
     res.send("Hello dev")
 })
+//route for login
+
+app.post('/login',(req,res)=>{
+    const {username,password}=req.body;
+    const sql ="SELECT * FROM users where username=? AND password=?";
+    db.query(sql,[username,password],(err,results)=>{
+
+        if(err) return res.status(404).json("LOgin Failed");
+
+    })
+})
+
+
+
 app.listen(3000,()=>{
     console.log(`MY app is running on http://localhost:3000`)
 })
