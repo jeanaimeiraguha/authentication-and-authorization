@@ -1,2 +1,6 @@
-// const name="Iraguha";
-// console.log(`Hello `, {$name});
+import mysql from "mysql"
+import express from "express"
+import cors from  "cors"
+const app=express()
+app.use(cors())
+app.use(express.json())
