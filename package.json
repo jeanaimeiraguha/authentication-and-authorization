@@ -4,7 +4,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
-   
   },
   "repository": {
     "type": "git",
@@ -13,7 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type":"module",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/jeanaimeiraguha/authentication-and-authorization/issues"
   },
