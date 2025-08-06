@@ -16,5 +16,10 @@
     "url": "https://github.com/jeanaimeiraguha/authentication-and-authorization/issues"
   },
   "homepage": "https://github.com/jeanaimeiraguha/authentication-and-authorization#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mysql": "^2.18.1"
+  }
 }
