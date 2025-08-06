@@ -50,8 +50,16 @@ app.post("/login", (req, res) => {
     }
   });
 });
-//
+//Middleware to ensure login got done sucessfully
+const isLoggedIn=(req,res,next)=>{
+if(req.session.user){
+    next();
+}
+else{
+    res.send("please first  Login to continue plz")
+}
 
+}
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
