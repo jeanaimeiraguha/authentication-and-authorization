@@ -18,6 +18,10 @@ db.connect((err)=>{
         console.log("Connection succeed");
     }
 })
+app.get('/',(req,res)=>{
+
+    console.log('Hello dev')
+})
 app.listen(3000,()=>{
     console.log(`MY app is running on http://localhost:3000`)
 })
