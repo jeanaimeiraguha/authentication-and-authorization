@@ -1,48 +1,41 @@
-import mysql from "mysql";
 import express from "express";
-import cors from "cors";
 import session from "express-session";
+import cors from "cors";
+import mysql from "mysql";
 
 const app = express();
-
-// Enable CORS and JSON parsing
-app.use(cors());
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-// Setup session middleware
-app.use(session({
-  secret: "iraguha",        // Used to sign the session ID cookie
-  resave: false,
-  saveUninitialized: false
-}));
+app.use(
+  session({
+    secret: "Iii",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-// Connect to MySQL database
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "backend"
+  database: "backend",
 });
 
 db.connect((err) => {
   if (err) {
-    console.log(" An error occurred while connecting to the DB");
-    console.log(err);
+    console.log("Failed");
   } else {
-    console.log(" DB connection successful");
+    console.log("Connection succeed");
   }
 });
 
-// Home route
 app.get("/", (req, res) => {
-  res.send("Hello dev");
+  res.send("Welcome"); 
 });
 
-// Login route
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
-
   const sql = "SELECT * FROM users WHERE username = ? AND password = ?";
   db.query(sql, [username, password], (err, results) => {
     if (err) {
@@ -50,15 +43,15 @@ app.post("/login", (req, res) => {
     }
 
     if (results.length > 0) {
-      req.session.user = results[0];
-      return res.send(" You are now logged in");
+      req.session.user = results[0]; 
+      return res.send("You logged in"); 
     } else {
-      return res.send(" Wrong credentials");
+      return res.send("Wrong credentials");
     }
   });
 });
+//
 
-// Start server
 app.listen(3000, () => {
-  console.log(" App is running at http://localhost:3000");
+  console.log("Server running on port 3000");
 });
